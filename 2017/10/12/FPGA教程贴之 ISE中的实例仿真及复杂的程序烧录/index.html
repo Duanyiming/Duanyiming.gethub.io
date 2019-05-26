@@ -6,19 +6,41 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href>
-  <title>Archives | iBlog</title>
+  <title>FPGA教程贴之 ISE中的实例仿真及复杂的程序烧录 | iBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="攻城狮一枚，">
-<meta name="keywords" content="C,C++,python,攻城狮，后端，编程，码农">
-<meta property="og:type" content="website">
-<meta property="og:title" content="iBlog">
-<meta property="og:url" content="/archives/index.html">
+  <meta name="description" content="####   上一篇教程分享了一些64 位操作系统中的bug问题解决方法，这一篇教程将把这周Alex老师讲的内容以总结的形式分享给大家，期望能给各位在本节课的学习中提供一些帮（zao）助（ri）（tuo）（keng）。">
+<meta name="keywords" content="教程,FPGA,ISE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FPGA教程贴之 ISE中的实例仿真及复杂的程序烧录">
+<meta property="og:url" content="/2017/10/12/FPGA教程贴之 ISE中的实例仿真及复杂的程序烧录/index.html">
 <meta property="og:site_name" content="iBlog">
-<meta property="og:description" content="攻城狮一枚，">
+<meta property="og:description" content="####   上一篇教程分享了一些64 位操作系统中的bug问题解决方法，这一篇教程将把这周Alex老师讲的内容以总结的形式分享给大家，期望能给各位在本节课的学习中提供一些帮（zao）助（ri）（tuo）（keng）。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-f61349d9be737bff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-89355bfd2ac14542.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-6219bc208fc8ef85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-6e88b8cdd233d554.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-547055f219199b7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-044daaf167b31ab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-6eab6f92b39d02bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-7dd0e1c68f6b5c2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-190dc52d9341288e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-4635d9d95ba3d9dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-1a7e98e143a03b63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-66d1949c98135323.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-a3645ad7867499bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-f650b63f7efb2795.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-0a8f892d9c25a0d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-e7204007ba837a60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-243294da15efe01c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-e25126e925973dc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-2212fec2da98afce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7445362-3bcdbe9ffa839643.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-05-26T15:26:25.690Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iBlog">
-<meta name="twitter:description" content="攻城狮一枚，">
+<meta name="twitter:title" content="FPGA教程贴之 ISE中的实例仿真及复杂的程序烧录">
+<meta name="twitter:description" content="####   上一篇教程分享了一些64 位操作系统中的bug问题解决方法，这一篇教程将把这周Alex老师讲的内容以总结的形式分享给大家，期望能给各位在本节课的学习中提供一些帮（zao）助（ri）（tuo）（keng）。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7445362-f61349d9be737bff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="iBlog" type="application/atom+xml">
   
@@ -164,169 +186,101 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-FPGA教程贴之 ISE中的实例仿真及复杂的程序烧录" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      FPGA教程贴之 ISE中的实例仿真及复杂的程序烧录
+    </h1>
+  
+
+        
+        <a href="/2017/10/12/FPGA教程贴之 ISE中的实例仿真及复杂的程序烧录/" class="archive-article-date">
+  	<time datetime="2017-10-11T16:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-12</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#### </p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-f61349d9be737bff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="form unsplash"></p>
+<p>上一篇教程分享了一些64 位操作系统中的bug问题解决方法，这一篇教程将把这周Alex老师讲的内容以总结的形式分享给大家，期望能给各位在本节课的学习中提供一些帮（zao）助（ri）（tuo）（keng）。</p>
+<a id="more"></a>
+<h4 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h4><ol>
+<li><p>打开Xilinx PlanAhead 14.7 后在桌面点击 Create New Project 新建工程项目</p>
+</li>
+<li><p>next 后 填写 project name And project location 注意 这两项不要包含有中文或特殊符号<br><img src="http://upload-images.jianshu.io/upload_images/7445362-89355bfd2ac14542.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+</li>
+<li><p>next 选择项目类型，我们选第一个RTL Project </p>
+</li>
+<li><p>next 创建一个Sources项目文件用于编写VHDL程序，最下角选择编程语言，我们选择<em>VHDL</em>，然后点击Create File 创建 Source文件；创建好后如下图所示，之后继续next</p>
+</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-6219bc208fc8ef85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<ol start="5">
+<li><p>接下来的添加 Existing Ip 暂时跳过，constraints 如第四步一样创建一个文件，这个文件用于physical and timing constraints，本章节用于IO管脚的定义。</p>
+</li>
+<li><p>next 选择芯片型号，我买的是Xc6slx9ftg256-2 ，直接搜索框输入FPGA芯片型号后选定他，然后点击finish；</p>
+</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-6e88b8cdd233d554.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<ol start="7">
+<li>最后是Module的IO管脚定义，这里提前定义好的IO管脚在后面会直接生成写好的port管脚配置代码，比较方便。管脚定义好后点击ok，一个project就搭好了 ！  </li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-547055f219199b7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<h4 id="代码编写及PC端仿真"><a href="#代码编写及PC端仿真" class="headerlink" title="代码编写及PC端仿真"></a>代码编写及PC端仿真</h4><ol>
+<li>你的工程搭好后会是这个样子:</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-044daaf167b31ab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>我们首先在project manager 中点击刚刚创建的source文件，然后你就能看到程序帮你写好框架和Port项的source文件，我们在43行begin 后面添加自己的代码：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-6eab6f92b39d02bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-7dd0e1c68f6b5c2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<ol start="2">
+<li>在project manager 中点击刚刚创建的第二个文件：constraints文件</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-190dc52d9341288e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>这个文件中我们需要把在source文件中写的 a,b,put1,put2 Port端口和外界相连，输入端口a,b 连接开关key，输出端口put1,2 连接Led；我们参考商家为我们这块板子写好的一个ucf文件：ax309.ucf，其中可以看到这个FPGA芯片的引脚都连接了哪些东西：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-4635d9d95ba3d9dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ax309.ucf"></p>
+<ol start="3">
+<li>我们查找到key 和led连接到这些端口后，复制选中的端口到工程中我们自己的constraints文件中：修改成符合我们要求的代码；</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-1a7e98e143a03b63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<ol start="4">
+<li>点击下图中的保存按钮（或者如图中的快捷键所示），然后会弹出下图的reload框，点击进行reload 养成定时保存项目是一个好习惯（微笑）</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-66d1949c98135323.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-a3645ad7867499bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<ol start="5">
+<li>点击左侧 RTL Analysis 中的 Schematic，创建原理图（代码有错误时会一下几步都编译不通过）预览框中会出现硬件原理图；</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-f650b63f7efb2795.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<ol start="6">
+<li>点击左侧的 Run Synthesis，等待一段时间编译过后会在底部出现io配置，检查是否如你ucf文件中配置的那样；</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-0a8f892d9c25a0d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-e7204007ba837a60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<ol start="7">
+<li>点击左侧的 Run Implementation 等待一段时间</li>
+<li>点击左侧的Generate Bit Stream 生成FPGA核 文件代码</li>
+<li>最后点击 lanch chipscope analyz 进行分析器仿真</li>
+<li>接下来连接FPGA板到电脑后按照截图一步步走，最后烧录成功！</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-243294da15efe01c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-e25126e925973dc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-2212fec2da98afce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7445362-3bcdbe9ffa839643.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Finished"></p>
+<h5 id="OTHER"><a href="#OTHER" class="headerlink" title="OTHER"></a>OTHER</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">小吐槽----FPGA开发 属于EDA（electronic design automation）类型的开发方式，</span><br><span class="line">对于以前一直接触单片机和altium的我yyming来讲是自动化程度最高的一种开发方</span><br><span class="line">式了。。还是有点小期待的，但同时跟着教程一路走来的大家也可以发现，FPGA</span><br><span class="line">开发最大的缺点就是繁琐和慢，下载编译一个程序都要搞这么复杂也是没谁了。</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/21/hello-world/" class="archive-article-date">
-  	<time datetime="2019-05-21T13:07:40.302Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/21/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/设计模式分类/" class="archive-article-date">
-  	<time datetime="2019-05-20T13:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/20/设计模式分类/">设计模式分类</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/设计模式//" class="article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/04/Git_notes/" class="archive-article-date">
-  	<time datetime="2019-03-04T04:12:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/04/Git_notes/">Git基本操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/github//" class="article-tag-list-link color2">github</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/22/剑指/剑指offer-栈的压入，弹出序列/" class="archive-article-date">
-  	<time datetime="2019-02-22T15:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/22/剑指/剑指offer-栈的压入，弹出序列/">剑指offer-栈的压入，弹出序列</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -336,357 +290,135 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/剑指offer//" class="article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/22/剑指/剑指offer-顺序打印矩阵/" class="archive-article-date">
-  	<time datetime="2019-02-22T15:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/22/剑指/剑指offer-顺序打印矩阵/">剑指offer-顺序打印矩阵</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">FPGA</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ISE</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/剑指offer//" class="article-tag-list-link color3">剑指offer</a>
+        			<a href="/categories/FPGA//" class="article-tag-list-link color5">FPGA</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:/2017/10/12/FPGA教程贴之 ISE中的实例仿真及复杂的程序烧录/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/22/剑指/剑指offer-e二叉搜索树与双向链表/" class="archive-article-date">
-  	<time datetime="2019-02-22T15:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/02/22/剑指/剑指offer-从上往下打印二叉树/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          剑指offer-从上往下打印二叉树
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/18/金工实习项目记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">金工实习项目记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/22/剑指/剑指offer-e二叉搜索树与双向链表/">剑指offer-e二叉搜索树与双向链表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/剑指offer//" class="article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/22/2019-02-22-剑指offer-二叉树中和为某一值的路径/" class="archive-article-date">
-  	<time datetime="2019-02-22T15:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/22/2019-02-22-剑指offer-二叉树中和为某一值的路径/">剑指offer-二叉树中和为某一值的路径</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/剑指offer//" class="article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/22/剑指/剑指offer-包含min函数的栈/" class="archive-article-date">
-  	<time datetime="2019-02-22T15:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/22/剑指/剑指offer-包含min函数的栈/">剑指offer-包含min函数的栈</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/剑指offer//" class="article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/22/剑指/剑指offer-二叉搜索树的后续遍历序列/" class="archive-article-date">
-  	<time datetime="2019-02-22T15:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/22/剑指/剑指offer-二叉搜索树的后续遍历序列/">剑指offer-二叉搜索树的后续遍历序列</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/剑指offer//" class="article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/22/剑指/剑指offer-从上往下打印二叉树/" class="archive-article-date">
-  	<time datetime="2019-02-22T15:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/22/剑指/剑指offer-从上往下打印二叉树/">剑指offer-从上往下打印二叉树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/剑指offer//" class="article-tag-list-link color3">剑指offer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -710,8 +442,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
